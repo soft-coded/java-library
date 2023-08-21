@@ -1,22 +1,18 @@
 package com.example.entity;
 
-import java.util.*;
-
 public class User {
   private int id;
-  private String username, email;
-  private List<Book> loanedBooks;
+  private String name, email;
 
   // default constructor
   public User() {
   }
 
   // parameterized constructor
-  public User(int id, String username, String email) {
+  public User(int id, String name, String email) {
     this.id = id;
-    this.username = username;
+    this.name = name;
     this.email = email;
-    this.loanedBooks = new ArrayList<>();
   }
 
   public int getId() {
@@ -27,12 +23,12 @@ public class User {
     this.id = id;
   }
 
-  public String getUsername() {
-    return username;
+  public String getName() {
+    return name;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public String getEmail() {
@@ -43,21 +39,12 @@ public class User {
     this.email = email;
   }
 
-  public List<Book> getLoanedBooks() {
-    return loanedBooks;
-  }
-
-  public void setLoanedBooks(List<Book> loanedBooks) {
-    this.loanedBooks = loanedBooks;
-  }
-
   // toString method to display data when printed
   public String toString() {
     String res = "User {";
     res += " ID: " + this.id;
-    res += ", name: " + this.username;
+    res += ", name: " + this.name;
     res += ", email: " + this.email;
-    res += ", total loaned books: " + this.loanedBooks.size();
 
     return res + " }";
   }
