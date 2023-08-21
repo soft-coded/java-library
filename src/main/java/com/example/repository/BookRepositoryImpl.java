@@ -2,20 +2,54 @@ package com.example.repository;
 
 import com.example.entity.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 // the interface for book repository
 interface IBookRepository {
-  Book addUser(User user);
+  Book addBook(Book book);
 
-  void deleteUser(int id);
+  void deleteBook(int id);
 
-  User updateUser(int id, String newEmail);
+  Book updateBook(Book book);
 
-  User updateUser(User user);
-
-  List<User> getAllUsers();
+  List<Book> getAllBooks();
 }
 
-public class UserRepositoryImpl implements IUserRepository {
+// class implementing the interface
+public class BookRepositoryImpl implements IBookRepository {
+  private List<Book> books = new ArrayList<>();
 
+  public Book addBook(Book book) {
+    // don't add if already present
+    if (books.contains(book))
+      return book;
+
+    books.add(book);
+    return book;
+  }
+
+  public void deleteBook(int bookId) {
+    books.removeIf((bookObj) -> bookObj.getId() == bookId);
+  }
+
+  public Book updateBook(Book newBook) {
+    this.books
+        .stream()
+        .filter((bookObj) -> bookObj.getId() == newBook.getId())
+        .forEach((bookObj) -> {
+          bookObj.setTitle(newBook.getTitle());
+          bookObj.setAuthor(newBook.getAuthor());
+          // id cannot be changed
+        });
+
+    return this.books
+        .stream()
+        .filter((bookObj) -> bookObj.getId() == newBook.getId())
+        .collect(Collectors.toList())
+        .get(0);
+  }
+
+  public List<Book> getAllBooks() {
+    return books;
+  }
 }
