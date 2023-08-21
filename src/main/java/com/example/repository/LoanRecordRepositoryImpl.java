@@ -39,6 +39,9 @@ public class LoanRecordRepositoryImpl implements ILoanRecordRepository {
         .forEach((loanRecordObj) -> {
           loanRecordObj.setUserId(newLoanRecord.getUserId());
           loanRecordObj.setBookId(newLoanRecord.getBookId());
+          loanRecordObj.setBorrowDate(newLoanRecord.getBorrowDate());
+          loanRecordObj.setDueDate(newLoanRecord.getDueDate());
+          loanRecordObj.setReturnDate(newLoanRecord.getReturnDate());
           // id cannot be changed
         });
 

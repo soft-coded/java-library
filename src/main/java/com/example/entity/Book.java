@@ -10,10 +10,14 @@ public class Book {
   }
 
   // parameterized constructor
-  public Book(int id, String title, String author) {
+  public Book(int id, String title, String author, String description, String publisher, double price, int quantity) {
     this.id = id;
     this.title = title;
     this.author = author;
+    this.quantity = quantity;
+    this.description = description;
+    this.publisher = publisher;
+    this.price = price;
   }
 
   public int getId() {

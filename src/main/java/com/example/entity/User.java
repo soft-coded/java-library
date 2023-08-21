@@ -9,7 +9,7 @@ public class User {
   }
 
   // parameterized constructor
-  public User(int id, String name, String email, String role) {
+  public User(int id, String name, String email, String role, String fullName, String password, int contactNo) {
     this.id = id;
     this.name = name;
     this.email = email;
@@ -20,6 +20,9 @@ public class User {
      * - "manager"
      */
     this.role = role.toLowerCase();
+    this.fullName = fullName;
+    this.password = password;
+    this.contactNo = contactNo;
   }
 
   public int getId() {
