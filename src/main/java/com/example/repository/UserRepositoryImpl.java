@@ -55,6 +55,9 @@ public class UserRepositoryImpl implements IUserRepository {
           userObj.setEmail(newUser.getEmail());
           userObj.setName(newUser.getName());
           userObj.setRole(newUser.getRole());
+          userObj.setFullName(newUser.getFullName());
+          userObj.setContactNo(newUser.getContactNo());
+          userObj.setPassword(newUser.getPassword());
           // id cannot be changed
         });
 

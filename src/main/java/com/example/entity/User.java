@@ -1,8 +1,8 @@
 package com.example.entity;
 
 public class User {
-  private int id;
-  private String name, email, role;
+  private int id, contactNo;
+  private String name, email, role, fullName, password;
 
   // default constructor
   public User() {
@@ -54,12 +54,39 @@ public class User {
     this.role = role;
   }
 
+  public int getContactNo() {
+    return contactNo;
+  }
+
+  public void setContactNo(int contactNo) {
+    this.contactNo = contactNo;
+  }
+
+  public String getFullName() {
+    return fullName;
+  }
+
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
   // toString method to display data when printed
   public String toString() {
     String res = "User {";
     res += " ID: " + this.id;
     res += ", name: " + this.name;
     res += ", email: " + this.email;
+    res += ", full name: " + this.fullName;
+    res += ", password: " + this.password;
+    res += ", contact number: " + this.contactNo;
     res += ", role: " + this.role;
 
     return res + " }";
