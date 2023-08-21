@@ -121,7 +121,15 @@ public final class App {
                     System.out.println("User added successfully: " + returnedUser.toString());
                     break;
                 }
+                case 2: {
+                    int userId;
+                    System.out.println("Enter the id of the user to be deleted:");
+                    userId = sc.nextInt();
 
+                    userService.deleteUser(userId);
+                    System.out.println("User deleted");
+                    break;
+                }
                 case 3: {
                     // new Book(id, title, author, desc, publ, price, quantity)
                     String title, author, desc, pub;
@@ -152,8 +160,17 @@ public final class App {
                                     quantity));
 
                     System.out.println("Book added successfully: " + returnedBook);
+                    break;
                 }
+                case 4: {
+                    int bookId;
+                    System.out.println("Enter the id of the book to be deleted:");
+                    bookId = sc.nextInt();
 
+                    bookService.deleteBook(bookId);
+                    System.out.println("Book deleted");
+                    break;
+                }
                 case 5: {
                     /*
                      * LoanRecord(int id,
@@ -182,6 +199,15 @@ public final class App {
                             new LoanRecord(rand.nextInt(4999) + 1, bookId, userId, boDate, dueDate, reDate));
 
                     System.out.println("Loan record added: " + rec.toString());
+                    break;
+                }
+                case 6: {
+                    int recordId;
+                    System.out.println("Enter the id of the record to be deleted:");
+                    recordId = sc.nextInt();
+
+                    loanRecService.deleteLoanRecord(recordId);
+                    System.out.println("Record deleted");
                 }
                 default:
                     break;
