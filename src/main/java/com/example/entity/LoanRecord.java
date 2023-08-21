@@ -1,10 +1,8 @@
 package com.example.entity;
 
-import java.time.*;
-
 public class LoanRecord {
   private int id, bookId, userId;
-  private LocalDate borrowDate, dueDate, returnDate;
+  private String borrowDate, dueDate, returnDate;
 
   // default constructor
   public LoanRecord() {
@@ -14,9 +12,9 @@ public class LoanRecord {
   public LoanRecord(int id,
       int bookId,
       int userId,
-      LocalDate borrowDate,
-      LocalDate dueDate,
-      LocalDate returnDate) {
+      String borrowDate,
+      String dueDate,
+      String returnDate) {
     this.id = id;
     this.bookId = bookId;
     this.userId = userId;
@@ -49,27 +47,27 @@ public class LoanRecord {
     this.userId = userId;
   }
 
-  public LocalDate getBorrowDate() {
+  public String getBorrowDate() {
     return borrowDate;
   }
 
-  public void setBorrowDate(LocalDate borrowDate) {
+  public void setBorrowDate(String borrowDate) {
     this.borrowDate = borrowDate;
   }
 
-  public LocalDate getDueDate() {
+  public String getDueDate() {
     return dueDate;
   }
 
-  public void setDueDate(LocalDate dueDate) {
+  public void setDueDate(String dueDate) {
     this.dueDate = dueDate;
   }
 
-  public LocalDate getReturnDate() {
+  public String getReturnDate() {
     return returnDate;
   }
 
-  public void setReturnDate(LocalDate returnDate) {
+  public void setReturnDate(String returnDate) {
     this.returnDate = returnDate;
   }
 
