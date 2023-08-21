@@ -60,6 +60,7 @@ public class User {
     res += " ID: " + this.id;
     res += ", name: " + this.name;
     res += ", email: " + this.email;
+    res += ", role: " + this.role;
 
     return res + " }";
   }
