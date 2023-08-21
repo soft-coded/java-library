@@ -39,6 +39,10 @@ public class BookRepositoryImpl implements IBookRepository {
         .forEach((bookObj) -> {
           bookObj.setTitle(newBook.getTitle());
           bookObj.setAuthor(newBook.getAuthor());
+          bookObj.setDescription(newBook.getDescription());
+          bookObj.setPrice(newBook.getPrice());
+          bookObj.setPublisher(newBook.getPublisher());
+          bookObj.setQuantity(newBook.getQuantity());
           // id cannot be changed
         });
 
