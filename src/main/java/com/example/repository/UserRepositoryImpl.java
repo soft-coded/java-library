@@ -54,6 +54,7 @@ public class UserRepositoryImpl implements IUserRepository {
         .forEach((userObj) -> {
           userObj.setEmail(newUser.getEmail());
           userObj.setName(newUser.getName());
+          userObj.setRole(newUser.getRole());
           // id cannot be changed
         });
 

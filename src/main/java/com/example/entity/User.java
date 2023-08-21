@@ -2,17 +2,24 @@ package com.example.entity;
 
 public class User {
   private int id;
-  private String name, email;
+  private String name, email, role;
 
   // default constructor
   public User() {
   }
 
   // parameterized constructor
-  public User(int id, String name, String email) {
+  public User(int id, String name, String email, String role) {
     this.id = id;
     this.name = name;
     this.email = email;
+    /*
+     * permitted role values:
+     * - "user"
+     * - "admin"
+     * - "manager"
+     */
+    this.role = role.toLowerCase();
   }
 
   public int getId() {
@@ -37,6 +44,14 @@ public class User {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
   }
 
   // toString method to display data when printed
